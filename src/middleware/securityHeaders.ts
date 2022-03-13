@@ -63,6 +63,7 @@ export async function securityHeaders(ctx: Context, next: Function) {
   ctx.response.headers.set('X-Content-Type-Options', 'nosniff');
   ctx.response.headers.set('X-Frame-Options', 'DENY');
   ctx.response.headers.set('Referrer-Policy', 'same-origin');
+  ctx.response.headers.set('Cache-Control', 'no-cache');
   ctx.response.headers.set('Feature-Policy', FEATURE_POLICY);
   ctx.response.headers.set('Permissions-Policy', PERMISSIONS_POLICY);
   ctx.response.headers.set('Content-Security-Policy', CONTENT_SECURITY_POLICY);
