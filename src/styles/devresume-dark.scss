@@ -1,0 +1,73 @@
+/*************************** Theme Colours****************************/
+// Define theme colour scheme
+$theme-background: #383838;
+$theme-color-primary: #54B689;
+$theme-text-color-primary: #aaa;
+$theme-text-color-secondary: lighten($theme-text-color-primary, 15%);
+$theme-text-color-light: lighten($theme-text-color-primary, 40%);
+$theme-border-color:  lighten($theme-text-color-primary, 60%);
+
+/*************************** Variables Section. *****************************/
+// Create variables to override the default value for variables used in the Bootstrap SCSS files.
+$gray-100: lighten($theme-text-color-primary, 60%);
+$gray-200: lighten($theme-text-color-primary, 55%);
+$gray-300: lighten($theme-text-color-primary, 50%);
+$gray-400: lighten($theme-text-color-primary, 45%);
+$gray-500: lighten($theme-text-color-primary, 40%);
+$gray-600: lighten($theme-text-color-primary, 30%);
+$gray-700: lighten($theme-text-color-primary, 20%);
+$gray-800: lighten($theme-text-color-primary, 10%);
+$gray-900: $theme-text-color-primary;
+
+/* Override BS5 sass color */
+$primary: $theme-color-primary;
+$secondary: $theme-text-color-secondary;
+
+body {
+  color: $theme-text-color-secondary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: lighten($theme-text-color-primary, 10%);
+}
+
+svg {
+  color: #b5b5b5;
+}
+
+a.theme-link {
+	color: $theme-text-color-primary;
+  -webkit-text-decoration-color: rgba($theme-text-color-primary,0.3);
+  text-decoration-color: rgba($theme-text-color-primary,0.3);
+  &:hover {
+    color: $theme-color-primary;
+    -webkit-text-decoration-color: rgba($theme-color-primary,0.8);
+    text-decoration-color: rgba($theme-color-primary,0.8);
+  }
+}
+
+.resume-wrapper {
+  background-color: $theme-background;
+}
+
+.resume-section-heading {
+  color: $theme-color-primary;
+  &:before {
+    background: $theme-color-primary;
+  }
+}
+
+.resume-name {
+  color: $theme-color-primary;
+}
+
+a.resume-link {
+  color: $theme-text-color-secondary;
+  &:hover, &:hover svg {
+    color: $theme-color-primary;
+  }
+}
+
+.text-muted {
+  color: #a7a7a7 !important;
+}

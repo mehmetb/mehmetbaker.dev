@@ -1,1 +1,10 @@
-@import "./devresume.scss";
+@import './devresume.scss';
+@import './devresume-light.scss';
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #444;
+  }
+
+  @import './devresume-dark.scss';
+}
