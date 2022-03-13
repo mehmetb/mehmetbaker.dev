@@ -23,4 +23,7 @@ main = "index.mjs"
 name = "mehmetbaker_dev"
 zone_id = ""
 workers_dev = false
-routes = ["*.mehmetbaker.dev/*"]
+routes = [
+  "www.mehmetbaker.dev/*",
+  "mehmetbaker.dev/*"
+]
