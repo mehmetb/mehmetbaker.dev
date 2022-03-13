@@ -48,6 +48,7 @@ const CONTENT_SECURITY_POLICY: string = [
   `style-src  'self' https://fonts.googleapis.com 'unsafe-inline'`,
   `script-src 'self' https://cdn.jsdelivr.net`,
   `font-src 'self' https://fonts.gstatic.com`,
+  `img-src 'self' data:`,
   `frame-ancestors 'none'`,
   `object-src 'none'`,
   `base-uri 'self'`,
