@@ -1,41 +1,76 @@
-# 🌄 sunder-worker-template
+# mehmetbaker.dev
 
-A batteries-included template for [Cloudflare Workers](https://workers.cloudflare.com) with the following configuration:
+This website is running on [Cloudflare Workers](https://workers.cloudflare.com).
+You can modify it and run your own website.
 
-* [Sunder](https://sunderjs.com) minimal web framework.
-* [ESBuild](https://esbuild.github.io/) for builds in <50ms.
-* [Typescript](https://www.typescriptlang.org/) for typechecking.
-* [Miniflare](https://miniflare.dev) and [Jest](https://jestjs.io/) for testing.
-* [Sass](https://sass-lang.com/) for CSS preprocessing and minification.
-* [Workers Sites](https://developers.cloudflare.com/workers/platform/sites) for static files.
+## Getting started
 
-If you disagree with any of these choices it's easy to swap out that decision.
+First, clone this repository.
 
-## 🚀 Getting started
+```
+git clone git@github.com:mehmetb/mehmetbaker.dev.git
+```
 
-Press the green *"Use this template"* button in the top right to make a Github repository based on this one.
+Then, install [@cloudflare/wrangler](https://www.npmjs.com/package/@cloudflare/wrangler) CLI tool globally.
 
+```
+npm install --global @cloudflare/wrangler
+```
+
+Finally, install the project dependencies.
+
+```
+npm install
+```
 ## Development
-To build and preview using Miniflare, use
-```
-npm run miniflare
-```
 
-To serve using Miniflare, watch changes and build as you make changes, use 
+Run this command to start the server in development mode.
+
 ```
 npm run watch
 ```
 
-To make a production build use
-```
-npm run build
-```
+Then, navigate to [http://localhost:8787](http://localhost:8787) in your browser.
 
-### Testing
-
-The tests are run using Jest. Use `npm test` to run your tests.
-
-This is the recommended way to develop most of your app. Write tests for core functionality instead of relying on Miniflare or `wrangler dev`.
+**Note: You need to comment out some security headers for livereload to work. Go to [securityHeaders.ts](./src/middleware/securityHeaders.ts#L67) and comment out the Content-Security-Policy line. I highly recommend enabling it for production.**
 
 ### Publishing
-To publish, first make a build using `npm run build` and then use the Wrangler CLI tool.
+
+First, edit the [wranger.toml](./wrangler.toml) configuration.
+
+Set a name for your production app and set the routes for your website:
+
+```toml
+[env.production]
+name = "alphanumeric_name"
+zone_id = "will be overridden by CF_ZONE_ID environment variable"
+workers_dev = false
+routes = [
+  "*.example.com/*",
+  "example.com/*"
+]
+```
+
+[Create a Cloudflare API Token](https://developers.cloudflare.com/api/tokens/create/). After creating the API token, copy it to a notepad. Becasue if you refresh your CloudFlare dashboard you won't be able to see the API token again and will have to create a new token.
+
+Navigate to your [GitHub repository secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) settings page. *Note: If you see both Dependabot and Actions in the Secrets dropdown, choose Actions secrets.*
+
+Create a new repository secret. Secret name must be `CF_API_TOKEN`. Paste your Cloudflare API token in the Value box and press the Add secret button.
+
+Go to your [Cloudflare Dashboard](https://dash.cloudflare.com).
+
+![Cloudflare Dashboard Home](./docs/websites.png)
+
+Navigate to your website's overview.
+
+![Website Overview](./docs/overview.png)
+
+Create a GitHub repository secret named `CF_ZONE_ID` and paste your Zone ID as its value.
+
+Create a GitHub repository secret named `CF_ACCOUNT_ID` and paste your Account ID as its value.
+
+Now, go to Actions tab of your repository and run the Publish workflow from the main branch your repository.
+
+![Actions](./docs/actions.png)
+
+That's it, you're online! 
