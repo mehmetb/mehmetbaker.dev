@@ -18,3 +18,9 @@ command = "npm run build:nocleanup"
 [build.upload]
 format = "modules"
 main = "index.mjs"
+
+[env.production]
+name = "mehmetbaker_dev"
+zone_id = ""
+workers_dev = false
+routes = ["*.mehmetbaker.dev/*"]
