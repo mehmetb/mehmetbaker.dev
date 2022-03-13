@@ -1,8 +1,8 @@
 {
-    "name": "sunder-starter",
-    "version": "0.1.0",
+    "name": "@mehmetb/mehmetbaker.dev",
+    "version": "1.0.0",
     "private": true,
-    "description": "A starter template for Sunder applications on Cloudflare Workers",
+    "description": "https://mehmetbaker.dev",
     "type": "module",
     "scripts": {
         "build": "rimraf dist && node build.js -sourcemap",
