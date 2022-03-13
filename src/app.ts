@@ -1,5 +1,4 @@
 import { Router, Sunder } from "sunder";
-import { customHeader } from "./middleware/customHeader";
 import { renderErrorsAsJSON } from "sunder/middleware/render";
 import { registerRoutes } from "./routes";
 import { renderErrorsAsHTML } from "./middleware/htmlErrors";
@@ -10,8 +9,6 @@ export function createApp() {
     const router = new Router<Env>();
     registerRoutes(router);
 
-    app.use(customHeader);
-    
     app.use(renderErrorsAsHTML);
     app.use(renderErrorsAsJSON);
 

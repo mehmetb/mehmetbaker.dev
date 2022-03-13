@@ -6,26 +6,10 @@ import { HTMLTemplateData } from "./html";
  */
 export function basicLayout(htmlTemplateData: HTMLTemplateData): HTMLTemplateData {
     const newHeaders = html`
-        <link rel="stylesheet" href="/static/app.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         ${htmlTemplateData.head}`
 
-    const bodyInLayout = html`
-        <header>
-            <h1>my-app</h1>
-        </header>
-        <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-        </ul>
-        </nav>
-        ${htmlTemplateData.body}
-        <footer>
-            <p>
-            <a href="/">my-app</a>
-            | <a href="https://sunderjs.com/docs">Sunder Documentation</a>
-            | <a href="https://github.com/gzuidhof/sunder-worker-template">Template readme</a></p>
-        </footer>`
+    const bodyInLayout = html`${htmlTemplateData.body}`;
 
     return {...htmlTemplateData,
         head: newHeaders,

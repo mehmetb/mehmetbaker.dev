@@ -6,12 +6,10 @@ export interface HTMLTemplateData {
     title?: string
 }
 
-// A very basic HTML Template - do change or extend this.
 export function htmlDocumentTemplate(data: HTMLTemplateData) {
-
     return html`<!DOCTYPE html>
 <html>
-    <head>
+    <head lang="en">
         <meta charset="utf-8">
         ${data.title ? html`<title>${data.title}</title>` : undefined}
         ${data.head}
