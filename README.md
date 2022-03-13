@@ -27,7 +27,7 @@ npm install
 Run this command to start the server in development mode.
 
 ```
-npm run watch
+npm run dev
 ```
 
 Then, navigate to [http://localhost:8787](http://localhost:8787) in your browser.

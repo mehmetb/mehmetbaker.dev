@@ -8,7 +8,11 @@
     "build": "rimraf dist && node build.js -sourcemap",
     "build:nocleanup": "node build.js -sourcemap",
     "miniflare": "miniflare",
-    "watch": "rimraf dist && miniflare --watch --livereload",
+    "clean-dist": "rimraf dist",
+    "watch-static": "node watch-static.js",
+    "watch-server": "miniflare --watch --live-reload",
+    "watch": "run-p watch-server watch-static",
+    "dev": "run-s clean-dist watch",
     "test": "cd test && tsc && cd .. && node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "types:check": "tsc --noEmit && tsc --noEmit -p test/tsconfig.json"
   },
