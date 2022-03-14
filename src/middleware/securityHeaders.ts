@@ -43,10 +43,19 @@ const PERMISSIONS_POLICY: string = FEATURES
   .map(feature => `${feature}=()`)
   .join(', ');
 
+const STYLE_SRC: string = [
+  `'self'`,
+  'https://fonts.googleapis.com',
+  `'sha256-yDqp/rMnw04H0wAWjumgZzAS4BJJNC2Lc8N20OhOsbY='`,
+  `'sha256-ebohbhmnr+AzVPDPCDGN2CQPjH1HbDwUtvOm5Hy4fYo='`,
+  `'sha256-ixVUGs3ai0rMA0pgIVBN0KVlYbQip7/5SGmnUwJPNqE='`,
+  `'unsafe-hashes'`,
+].join(' ');
+
 const CONTENT_SECURITY_POLICY: string = [
   `default-src 'self'`,
-  `style-src  'self' https://fonts.googleapis.com 'unsafe-inline'`,
-  `script-src 'self' https://cdn.jsdelivr.net`,
+  `style-src  ${STYLE_SRC}`,
+  `script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com 'sha256-pOKOA/vvx/hjAEyauQzmoP9XM2HbuP0scaE5y/jWjtI='`,
   `font-src 'self' https://fonts.gstatic.com`,
   `img-src 'self' data:`,
   `frame-ancestors 'none'`,
