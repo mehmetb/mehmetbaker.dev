@@ -1,29 +1,12 @@
-# Enter your zone id and account id, then rename this file to wrangler.toml.
-# Consider removing wrangler.toml from the .gitignore file
-compatibility_date = "2022-03-13"
+name = "mehmetbaker_dev"
+main = "index.js"
+compatibility_date = "2022-05-03"
 
-type = "javascript"
-name = "my-app"
-account_id = ""
-workers_dev = true
-zone_id = ""
+workers_dev = false
 
 [site]
-entry-point = "./"
-bucket = "./dist/static"
-
-[build]
-command = "npm run build:nocleanup"
-
-[build.upload]
-format = "modules"
-main = "index.mjs"
+bucket = "./public"
 
 [env.production]
-name = "mehmetbaker_dev"
-zone_id = ""
-workers_dev = false
-routes = [
-  "www.mehmetbaker.dev/*",
-  "mehmetbaker.dev/*"
-]
+name = "mehmetbaker_dev-production"
+route = "https://*mehmetbaker.dev/*"

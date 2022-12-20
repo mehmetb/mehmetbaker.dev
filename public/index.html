@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="I'm a software developer. I enjoy coding web applications. Fan of Linux and free software." />
+
+    <title>Mehmet Baker's Personal Site</title>
+
+    <link rel="canonical" href="https://mehmetbaker.dev" />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    <style>
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #222;
+          color: #ddd;
+        }
+
+        a, a:visited, a:active {
+          color: #ddd;
+        }
+      }
+
+      @media (prefers-color-scheme: contrast) {
+        body {
+          background: #000;
+          color: #fff;
+        }
+
+        a, a:visited, a:active {
+          color: #fff;
+        }
+      }
+
+      table {
+        font-family: monospace;
+        padding-top: 15px;
+      }
+
+      td {
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="center">Mehmet Baker's Personal Site</h1>
+
+      <p class="center">I'm a software developer. I enjoy coding web applications. Fan of Linux and free software.</p>
+
+      <hr />
+
+      <article>
+        <h3>GPG Key</h3>
+
+        <a href="/pubkey.txt" download>Key</a>
+
+        <table>
+          <tr>
+            <td>pub</td>
+            <td>rsa4096 2020-05-08</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;</td>
+            <td>BD8C 10B6 1900 C13D D6C0  29E9 2116 8039 6332 D4CC</td>
+          </tr>
+
+          <tr>
+            <td>uid</td>
+            <td>Mehmet Baker &lt;<span><noscript>mehmet [at] mehmetbaker [dot] dev</noscript></span>&gt;</td>
+          </tr>
+
+          <tr>
+            <td>sub</td>
+            <td>rsa4096 2020-05-08</td>
+          </tr>
+        </table>
+      </article>
+
+      <article>
+        <h3>Github Profile</h3>
+        <p><a href="https://github.com/mehmetb">@mehmetb</a></p>
+      </article>
+    </main>
+
+    <footer>
+      Copyright (c) 2020 Mehmet Baker Verbatim copying and redistribution of this entire page are permitted provided this notice is preserved. 
+    </footer>
+
+    <script>
+      var charCodes = [109, 101, 104, 109, 101, 116, 64, 109, 101, 104, 109, 101, 116, 98, 97, 107, 101, 114, 46, 100, 101, 118]; 
+      var text = '';
+
+      for (var i = 0; i < charCodes.length; ++i) {
+        text += String.fromCharCode(charCodes[i]);
+      }
+
+      document.querySelector('span').innerHTML = text;
+    </script>
+  </body>
+</html>
