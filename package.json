@@ -4,7 +4,7 @@
   "private": true,
   "description": "https://mehmetbaker.dev",
   "scripts": {
-    "deploy": "wrangler publish index.js",
+    "deploy": "wrangler publish --env production",
     "dev": "wrangler dev index.js --local"
   },
   "dependencies": {

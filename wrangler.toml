@@ -9,4 +9,4 @@ bucket = "./public"
 
 [env.production]
 name = "mehmetbaker_dev-production"
-route = "https://*mehmetbaker.dev/*"
+route = { pattern = "https://*mehmetbaker.dev/*", zone_name = "mehmetbaker.dev" }
