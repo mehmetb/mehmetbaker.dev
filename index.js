@@ -51,6 +51,9 @@ async function handleEvent(event) {
 		// if an error is thrown serve the asset at index.html
 		if (!DEBUG) {
 			try {
+				// temporary redirect
+				return Response.redirect(`${new URL(req.url).origin}/index.html`, 307);
+				/*
 				const notFoundResponse = await getAssetFromKV(event, {
 					mapRequestToAsset: req => new Request(`${new URL(req.url).origin}/index.html`, req),
 				});
@@ -62,6 +65,7 @@ async function handleEvent(event) {
 
         setHeaders(response);
         return response;
+				*/
 			} catch (_) {
         // no-op
       }
