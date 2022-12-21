@@ -57,7 +57,7 @@ async function handleEvent(event) {
 
         const response = new Response(notFoundResponse.body, {
 					...notFoundResponse,
-					status: 200,
+					status: 404,
 				});
 
         setHeaders(response);
