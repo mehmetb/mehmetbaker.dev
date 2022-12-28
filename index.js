@@ -52,7 +52,7 @@ async function handleEvent(event) {
 		if (!DEBUG) {
 			try {
 				// temporary redirect
-				return Response.redirect(`${new URL(req.url).origin}/index.html`, 307);
+				return Response.redirect(`${new URL(event.request.url).origin}/index.html`, 307);
 				/*
 				const notFoundResponse = await getAssetFromKV(event, {
 					mapRequestToAsset: req => new Request(`${new URL(req.url).origin}/index.html`, req),
